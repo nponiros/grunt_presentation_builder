@@ -82,7 +82,7 @@ Type: `RegExp`
 
 Regular expression used to detect sections in the slide files. Default is `/---(.*)---/g`
 
-### Usage examples
+### Usage example
 
 ```js
 pbuilder: {
@@ -118,22 +118,26 @@ pbuilder: {
 
 You can check out the demos for more comprehensive examples on how to use the builder.
 
+### Demos
+
+* [pbuilder with reveal.js](https://github.com/nponiros/grunt_presentation_builder_revealjs_demo)
+
+If you have a demo using grunt-presentation-builder, then open a pull request to add a link to your demo or just open an issue with the link.
+
 ### Slide files
 
 A slide (markdown file) can have a front matter and one or more sections. Example slide file:
 
-```
-\---
-title: Slide title
-layout: layout_name
----
+    ---
+    title: Slide title
+    layout: layout_name
+    ---
 
----section1---
-Contents for the first section
+    ---section1---
+    Contents for the first section
 
----section2---
-Contents for the second section
-```
+    ---section2---
+    Contents for the second section
 
 The 4 first lines of the file define the front matter. Any attribute defined there can later be used in a layout. For example in order to reference the title use: `<%= title %>`.
 Attributes in the front matter override attributes with the same name defined in the layoutAttributes options property.
@@ -141,13 +145,8 @@ Attributes in the front matter override attributes with the same name defined in
 The names between the dashes define sections. For example the first section can be referenced as such: `<%= section1 %>`.
 In case a file defines no sections then you can use `<%= content %>` to get the contents of the file in the template.
 Each section gets through a markdown parser (markdown-it) before it is given to the template.
+
 There is a special section with name **code_editor** which does not get parsed. The contents of that section are given to the template as is and it is meant to be used for a code editor in the slide. You can have a look at the code_demo presentation in the [pbuilder with reveal.js](https://github.com/nponiros/grunt_presentation_builder_revealjs_demo) to see how it is used.
-
-### Demos
-
-* [pbuilder with reveal.js](https://github.com/nponiros/grunt_presentation_builder_revealjs_demo)
-
-If you have a demo using grunt-presentation-builder, then open a pull request to add a link to your demo or just open an issue with the link.
 
 ## TODO
 
