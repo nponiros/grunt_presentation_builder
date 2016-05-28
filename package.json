@@ -1,0 +1,34 @@
+{
+  "name": "grunt-presentation-builder",
+  "description": "Grunt task to build presentations by combining multiple slide files",
+  "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/nponiros/grunt_presentation_builder/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nponiros/grunt_presentation_builder.git"
+  },
+  "dependencies": {
+    "presentation-builder": ""
+  },
+  "peerDependencies": {
+    "grunt": ">=0.4.0"
+  },
+  "author": "Nikolas Poniros <nikolas@poniros.de> (http://poniros.de/)",
+  "license": "MIT",
+  "keywords": [
+    "presentations",
+    "build",
+    "multiple slides"
+  ],
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "scripts": {
+    "lint": "eslint -c .eslintrc.yml **/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^2.11.0"
+  }
+}
