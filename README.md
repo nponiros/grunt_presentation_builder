@@ -142,16 +142,11 @@ A slide (markdown file) can have a front matter and one or more sections. Exampl
 The 4 first lines of the file define the front matter. Any attribute defined there can later be used in a layout. For example in order to reference the title use: `<%= title %>`.
 Attributes in the front matter override attributes with the same name defined in the layoutAttributes options property.
 
-The names between the dashes define sections. For example the first section can be referenced as such: `<%= section1 %>`.
-In case a file defines no sections then you can use `<%= content %>` to get the contents of the file in the template.
+The names between the dashes define sections. For example the first section can be referenced as such: `<%= sections.section1 %>`.
+In case a file defines no sections then you can use `<%= sections.content %>` to get the contents of the file in the template.
 Each section gets through a markdown parser (markdown-it) before it is given to the template.
 
-There is a special section with name **code_editor** which does not get parsed. The contents of that section are given to the template as is and it is meant to be used for a code editor in the slide. You can have a look at the code_demo presentation in the [pbuilder with reveal.js](https://github.com/nponiros/grunt_presentation_builder_revealjs_demo) to see how it is used.
-
-## TODO
-
-* fix version for presentation-builder
-* publish
+There is a special section with name **code_editor** which does not get parsed. The contents of that section are given to the template as is and it is meant to be used for a code editor in the slide. You can have a look at the **code_demo** presentation in the [pbuilder with reveal.js](https://github.com/nponiros/grunt_presentation_builder_revealjs_demo) to see how it is used.
 
 ## License
 

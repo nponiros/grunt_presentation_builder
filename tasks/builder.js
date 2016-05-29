@@ -7,11 +7,13 @@ module.exports = function(grunt) {
     const options = this.options(); // eslint-disable-line no-invalid-this
     const filesSrc = this.filesSrc; // eslint-disable-line no-invalid-this
     const gruntFile = grunt.file;
-    const processTemplate = grunt.template.process;
+    const processTemplate = function(template, data) {
+      return grunt.template.process(template, {data});
+    };
 
-    const layouts = pbuilder.prepareFilenameToLayoutsMap(gruntFile, gruntFile.expand(options.layouts));
-    const nameToContentMap = pbuilder.prepareFilenameToContentMap(filesSrc, gruntFile, options);
-    const renderedSlides = pbuilder.renderSlides.get(options, nameToContentMap, layouts, processTemplate);
+    const layouts = pbuilder.prepareFilenameToLayoutsMap(gruntFile.expand(options.layouts), gruntFile.read);
+    const nameToContentMap = pbuilder.prepareFilenameToContentMap(filesSrc, gruntFile.read, options);
+    const renderedSlides = pbuilder.renderSlides(nameToContentMap, layouts, processTemplate, options);
 
     const index = grunt.file.read(options.index);
     const data = Object.assign(
