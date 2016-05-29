@@ -1,7 +1,7 @@
 {
   "name": "grunt-presentation-builder",
   "description": "Grunt task to build presentations by combining multiple slide files",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "bugs": {
     "url": "https://github.com/nponiros/grunt_presentation_builder/issues"
   },
@@ -10,7 +10,7 @@
     "url": "https://github.com/nponiros/grunt_presentation_builder.git"
   },
   "dependencies": {
-    "presentation-builder": ""
+    "presentation-builder": "1.x"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
@@ -26,9 +26,14 @@
     "node": ">=5.0.0"
   },
   "scripts": {
-    "lint": "eslint -c .eslintrc.yml **/*.js"
+    "lint": "eslint -c .eslintrc.yml **/*.js",
+    "preversion": "npm run lint",
+    "postversion": "git push && git push --tags",
+    "publish-please": "publish-please",
+    "prepublish": "publish-please guard"
   },
   "devDependencies": {
-    "eslint": "^2.11.0"
+    "eslint": "^2.11.0",
+    "publish-please": "^2.1.3"
   }
 }
