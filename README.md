@@ -80,7 +80,19 @@ Closing tag for the __nestedSlidePrefix__ option. Default is `</section>`.
 
 Type: `RegExp`
 
-Regular expression used to detect sections in the slide files. Default is `/---(.*)---/g`
+Regular expression used to detect sections in the slide files. Default is `/---(.*)---/g`.
+
+#### slideResolutionFullPath
+
+Type: `Boolean`
+
+Changes the way slides given in the `slides` option are matched to slides read in the `files` property. Default is `false`. See [presentation-builder](https://github.com/nponiros/presentation-builder/#slide-resolution) for more information.
+
+#### markdownRendererOptions
+
+Type: `Object`
+
+Options to configure the markdown renderer. See [markdown-it](https://github.com/markdown-it/markdown-it#init-with-presets-and-options) for possible options. Note that `default` is used as preset and this cannot be changed.
 
 ### Usage example
 
