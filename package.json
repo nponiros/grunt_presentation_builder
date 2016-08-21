@@ -1,7 +1,7 @@
 {
   "name": "grunt-presentation-builder",
   "description": "Grunt task to build presentations by combining multiple slide files",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "bugs": {
     "url": "https://github.com/nponiros/grunt_presentation_builder/issues"
   },
