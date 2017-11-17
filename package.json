@@ -10,7 +10,7 @@
     "url": "https://github.com/nponiros/grunt_presentation_builder.git"
   },
   "dependencies": {
-    "presentation-builder": "1.x"
+    "presentation-builder": "2.x"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
